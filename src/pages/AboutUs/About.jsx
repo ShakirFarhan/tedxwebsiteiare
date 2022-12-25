@@ -8,6 +8,8 @@ import theam from "../../assets/themeimage.svg"
 import prev from "../../assets/prev.svg"
 import next from "../../assets/next.svg"
 import linkedin from "../../assets/linkedin.svg"
+import aboutbg from "../../assets/about-bg.png"
+
 
 
 
@@ -28,6 +30,8 @@ function About() {
     if (active > 0) {
       decreament()
     }
+
+
   }
   const nextButton = () => {
     if (active < domains.length - 1) {
@@ -47,14 +51,14 @@ function About() {
 
           </div>
           <div className='mt-2'>
-            <div className="flex space-x-2">
+            <div className="flex md:space-x-1">
 
-              <h4 className='text-sm text-[#000000] font-semibold tracking-wider md:text-xl'>{props.name}</h4>
+              <h4 className='member-name text-md text-[#000000] font-semibold tracking-wider md:text-xl'>{props.name}</h4>
               <a href={props.linkedin}>
-                <img src={linkedin} alt="" />
+                <img className='w-5 md:w-8 sm:w-6' src={linkedin} alt="" />
               </a>
             </div>
-            <h5 className='text-xs text-[#EB0028] tracking-wider font-semibold md:text-lg'>{props.role}</h5>
+            <h5 className='member-role text-xs text-[#EB0028] tracking-wider font-semibold md:text-xs'>{props.role}</h5>
           </div>
 
         </div>
@@ -88,19 +92,33 @@ function About() {
         <section>
           <div className='flex flex-col items-center my-4'>
 
-            <h3 className='text-5xl font-semibold tracking-wide'>ABOUT <span className='text-[#EB0028]'>TEDX</span></h3>
+            <h3 className='text-3xl sm:text-5xl font-semibold tracking-wide'>ABOUT <span className='text-[#EB0028]'>TEDX</span></h3>
             <div>
-              <span className='text-lg px-2  text-[#fff] bg-[#EB0028] tracking-widest'>x = independently organized event</span>
+              <span className=' text-sm sm:text-lg px-2  text-[#fff] bg-[#EB0028] tracking-widest'>x = independently organized event</span>
 
             </div>
           </div>
-          <p className='text-xl text-[#000000] tracking-wider leading-8 about-desc'>In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized. (Subject to certain rules and regulations.)
+          <p className='text-xl text-[#000000] tracking-wider leading-8 about-desc sm:mx-4'>In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized. (Subject to certain rules and regulations.)
           </p>
         </section>
       </div>
+      <section className='bg-[#0B0B0B] pt-10 pb-14'>
+        <div>
+          <h3 className='text-2xl sm:text-4xl font-semibold mb-4 tracking-wide text-[#FFF] text-center'>OUR ESTEEMED <span className='text-[#EB0028]'>SPONSERS</span></h3>
+          <div className=' ml-2 flex gap-x-6 sm:ml-16 overflow-x-scroll justify-start overflow-y-hidden'>
+            <img src={member} />
+            <img src={member} />
+            <img src={member} />
+            <img src={member} />
+            <img src={member} />
+            <img src={member} />
+          </div>
+        </div>
 
+      </section>
       <section className='home_theme_section w-100 '>
-        <div className='container flex sm:items-center flex-col w-100'>
+        {/* <img className='absolute z-0 h-50%' src={aboutbg} alt="" /> */}
+        <div className='container flex sm:items-center flex-col w-100 z-10'>
           <h6 className='home_theme_heading text-center font-bold text-[#EB0028] tracking-widest text-4xl'>T<span className='text-[#fff]'>HEME</span></h6>
           <img className='sm:w-7/12 pt-4' src={theam} alt="" />
           <p className='home_theme_desc font-medium tracking-wider w-full text-[#fff] font-Gilroy  sm:text-center leading-8 mt-2 lg:mt-10 lg:pb-20 lg:text-2xl sm:mt-5 sm:pb-8 text-center'>How do you affect the world around you and how does the world around affect you? Our actions, behaviour, and decisions can have an impact on the people and environment around us. Whether it's choices we make in our personal lives or as a part of a larger community, we all have the power to shape the world in our small ways.
@@ -114,7 +132,7 @@ function About() {
         </div>
       </section>
       <section className='px-3 lg:mx-9'>
-        <h2 className='md:text-3xl text-center about_mot'>MEET OUR <span className='text-[#EB0028]'>TEAM</span></h2>
+        <h2 className='text-2xl sm:text-4xl text-center mt-7 font-bold tracking-wider'>MEET OUR <span className='text-[#EB0028]'>TEAM</span></h2>
         <div>
           <div className='flex justify-start gap-y-3 team-flex md:justify-center mt-3 overflow-scroll'>
             {
@@ -133,80 +151,180 @@ function About() {
           </div>
         </div>
 
-        <div style={{ display: active === 0 ? "" : "none" }} className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline relative'>
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+        <div style={{ display: active === 0 ? "" : "none" }} className=''>
+          <div className='flex md:ml-5 md:gap-y-5 xl:gap-y-6 space-x-3 mt-3' >
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+          </div>
+
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+
+
+
+          </div>
 
         </div>
-        <div style={{ display: active === 1 ? "" : "none" }} className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline'>
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+        <div style={{ display: active === 1 ? "" : "none" }} >
+          <div className='flex md:ml-5 md:gap-y-5 xl:gap-y-6 space-x-3 mt-3' >
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
 
+          </div>
+
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+
+
+
+          </div>
+        </div>
+        <div style={{ display: active === 2 ? "" : "none" }} >
+          <div className='flex md:ml-5 md:gap-y-5 xl:gap-y-6 space-x-3 mt-3' >
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+          </div>
+
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+
+
+
+          </div>
 
         </div>
-        <div style={{ display: active === 2 ? "" : "none" }} className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline'>
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+        <div style={{ display: active === 3 ? "" : "none" }}>
+          <div className='flex md:ml-5 md:gap-y-5 xl:gap-y-6 space-x-3 mt-3' >
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+          </div>
+
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
 
 
-        </div>
-        <div style={{ display: active === 3 ? "" : "none" }} className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline'>
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+
+          </div>
 
         </div>
-        <div style={{ display: active === 4 ? "" : "none" }} className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline'>
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+        <div style={{ display: active === 4 ? "" : "none" }}>
+          <div className='flex md:ml-5 md:gap-y-5 xl:gap-y-6 space-x-3 mt-3' >
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+          </div>
+
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+
+
+
+          </div>
 
         </div>
-        <div style={{ display: active === 5 ? "" : "none" }} className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline'>
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+        <div style={{ display: active === 5 ? "" : "none" }}>
+          <div className='flex md:ml-5 md:gap-y-5 xl:gap-y-6 space-x-3 mt-3' >
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+          </div>
+
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+
+
+
+          </div>
 
         </div>
-        <div style={{ display: active === 6 ? "" : "none" }} className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline'>
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+        <div style={{ display: active === 6 ? "" : "none" }} >
+          <div className='flex md:ml-5 md:gap-y-5 xl:gap-y-6 space-x-3 mt-3' >
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+          </div>
+
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+
+
+
+          </div>
 
         </div>
-        <div style={{ display: active === 7 ? "" : "none" }} className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline'>
+        <div style={{ display: active === 7 ? "" : "none" }}>
 
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
-          <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+          <div className='flex md:ml-5 md:gap-y-5 xl:gap-y-6 space-x-3 mt-3' >
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+          </div>
+
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+            <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
+
+
+
+
+          </div>
 
         </div>
       </section>

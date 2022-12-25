@@ -25,6 +25,9 @@
 
   letter-spacing: 0.05em;
 }
+.home_theme_section {
+  background-image: url("../../assets/about-bg.png");
+}
 .category {
   border-bottom: 3px solid #d9d9d9;
 
@@ -43,7 +46,11 @@
   display: none;
 }
 .home_theme_desc,
-.about-desc {
+.about-desc,
+.member-role,
+.member-name,
+.active,
+.category {
   font-family: myFont;
 }
 /* .team-flex-border {
@@ -77,5 +84,10 @@
 @media screen and (max-width: 768px) {
   .category {
     border-bottom: 3px solid #9f9f9f;
+  }
+}
+@media screen and (max-width: 423px) {
+  .categoryMembers {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
