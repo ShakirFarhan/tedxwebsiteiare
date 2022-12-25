@@ -4,11 +4,15 @@ import member from "../../assets/member.svg"
 import pastevent from "../../assets/past-event.svg"
 import desktop from "../../assets/desktop-image.svg"
 import mobile from "../../assets/Frame20.svg"
-import theam from "../../assets/themeimage.svg"
+// import theam from "../../assets/themeimage.svg"
 import prev from "../../assets/prev.svg"
 import next from "../../assets/next.svg"
 import linkedin from "../../assets/linkedin.svg"
-import aboutbg from "../../assets/about-bg.png"
+import aboutbg from "../../assets/about-bg.svg"
+import theam from "../../assets/theamlogo.svg"
+import theam2 from "../../assets/theam-logo.svg"
+
+
 
 
 
@@ -102,11 +106,11 @@ function About() {
           </p>
         </section>
       </div>
-      <section className='bg-[#0B0B0B] pt-10 pb-14'>
+      <section className='bg-[#0B0B0B] pt-10 pb-14 sponser-section'>
         <div>
           <h3 className='text-2xl sm:text-4xl font-semibold mb-4 tracking-wide text-[#FFF] text-center'>OUR ESTEEMED <span className='text-[#EB0028]'>SPONSERS</span></h3>
-          <div className=' ml-2 flex gap-x-6 sm:ml-16 overflow-x-scroll justify-start overflow-y-hidden'>
-            <img src={member} />
+          <div className='scroll-track ml-2 md:ml-9 flex gap-x-6 sm:ml-16 overflow-x-scroll justify-start overflow-y-hidden sponsers-scroll'>
+            <img className='sp' src={member} />
             <img src={member} />
             <img src={member} />
             <img src={member} />
@@ -116,12 +120,26 @@ function About() {
         </div>
 
       </section>
-      <section className='home_theme_section w-100 '>
+      <section className='home_theme_section w-100'>
         {/* <img className='absolute z-0 h-50%' src={aboutbg} alt="" /> */}
         <div className='container flex sm:items-center flex-col w-100 z-10'>
           <h6 className='home_theme_heading text-center font-bold text-[#EB0028] tracking-widest text-4xl'>T<span className='text-[#fff]'>HEME</span></h6>
-          <img className='sm:w-7/12 pt-4' src={theam} alt="" />
-          <p className='home_theme_desc font-medium tracking-wider w-full text-[#fff] font-Gilroy  sm:text-center leading-8 mt-2 lg:mt-10 lg:pb-20 lg:text-2xl sm:mt-5 sm:pb-8 text-center'>How do you affect the world around you and how does the world around affect you? Our actions, behaviour, and decisions can have an impact on the people and environment around us. Whether it's choices we make in our personal lives or as a part of a larger community, we all have the power to shape the world in our small ways.
+          {/* <img className='sm:w-7/12 pt-4' src={theam} alt="" /> */}
+          <div className='hidden flex -space-x-4 w-4/5 sm:block'>
+
+            <img className='w-full' src={theam} />
+
+          </div>
+          <div className='sm:hidden mt-2 text-center'>
+
+
+            <span className='text-3xl px-1 text-[#fff] bg-[#EB0028] tracking-widest'>NATURE <span className='text-[#000000]'>VS </span>NURTURE</span>
+
+            <img src={theam2} />
+
+          </div>
+
+          <p className=' home_theme_desc font-medium tracking-wider w-full text-[#fff] font-Gilroy  sm:text-center leading-8 mt-2 lg:mt-10 lg:pb-20 lg:text-2xl sm:mt-5 sm:pb-8 text-center'>How do you affect the world around you and how does the world around affect you? Our actions, behaviour, and decisions can have an impact on the people and environment around us. Whether it's choices we make in our personal lives or as a part of a larger community, we all have the power to shape the world in our small ways.
             <br />
             At the same time, the world around us also has a significant impact on us as individuals. The culture, politics, art, and society we live around impacts us in more ways than we realise. One could say that an individual is a battleground on which nature and nurture fight for dominance.
             <br />
@@ -132,7 +150,7 @@ function About() {
         </div>
       </section>
       <section className='px-3 lg:mx-9'>
-        <h2 className='text-2xl sm:text-4xl text-center mt-7 font-bold tracking-wider'>MEET OUR <span className='text-[#EB0028]'>TEAM</span></h2>
+        <h2 className=' text-2xl  sm:text-5xl text-center mt-7 font-bold tracking-wider'>MEET OUR <span className='text-[#EB0028]'>TEAM</span></h2>
         <div>
           <div className='flex justify-start gap-y-3 team-flex md:justify-center mt-3 overflow-scroll'>
             {
@@ -158,7 +176,7 @@ function About() {
 
           </div>
 
-          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-4 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline pt-2'>
 
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
@@ -180,7 +198,7 @@ function About() {
 
           </div>
 
-          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-4 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline pt-2'>
 
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
@@ -201,7 +219,7 @@ function About() {
 
           </div>
 
-          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-4 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline pt-2'>
 
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
@@ -223,7 +241,7 @@ function About() {
 
           </div>
 
-          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-4 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline pt-2'>
 
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
@@ -245,7 +263,7 @@ function About() {
 
           </div>
 
-          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-4 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline pt-2'>
 
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
@@ -267,7 +285,7 @@ function About() {
 
           </div>
 
-          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-4 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline pt-2'>
 
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
@@ -289,7 +307,7 @@ function About() {
 
           </div>
 
-          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-4 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline pt-2'>
 
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
@@ -312,7 +330,7 @@ function About() {
 
           </div>
 
-          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-6 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline '>
+          <div className='categoryMembers md:ml-5 mt-6 grid grid-cols-4 gap-y-4 sm:grid-cols-5 sm:gap-y-6 md:grid-cols-5 md:gap-y-5 xl:grid-cols-6 xl:gap-y-6 2xl:grid-cols-7 2xl:gap-x-0 2xl:gap-y-6 justify-baseline pt-2'>
 
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
             <Member name="John Doe" role="ORGANIZER" photo={member} linkedin="" />
@@ -330,7 +348,7 @@ function About() {
       </section>
       <div className='container mx-auto mt-7'>
         <section className='my-14 flex flex-col justify-center items-center'>
-          <h2 className='text-2xl font-bold md:text-3xl text-center pb-3'>MEET US <span className='text-[#dc2626]'>HERE</span></h2>
+          <h2 className='text-2xl font-bold sm:text-5xl text-center pb-3'>MEET US <span className='text-[#dc2626]'>HERE</span></h2>
           <iframe className='w-11/12 map mt-5 sm:w-10/12' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3803.059126454807!2d78.41553661408612!3d17.599926987951605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8ecfe1af26dd%3A0x65666fa3c4a256d2!2sInstitute%20of%20Aeronautical%20Engineering!5e0!3m2!1sen!2sin!4v1669179277990!5m2!1sen!2sin" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
       </div>
